@@ -28,7 +28,7 @@ export default clerkMiddleware(async (auth, request) => {
     }
     
     // Vérification des routes inexistantes, mais seulement si l'utilisateur est connecté
-    const validRoutes = ["/", "/dashboard", "/budgets", "/transactions", "/404","/sign-in(.*)", "/sign-up(.*)", "/manage/.*"];
+    const validRoutes = ["/dashboard", "/budgets", "/transactions", "/404","/sign-in(.*)", "/sign-up(.*)", "/manage/.*"];
     if (!validRoutes.some(route => new RegExp(`^${route}$`).test(request.nextUrl.pathname))) {
         return NextResponse.rewrite(new URL("/404", request.url));
     }
