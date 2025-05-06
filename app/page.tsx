@@ -1,5 +1,7 @@
 import { CalendarCheck } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
@@ -19,7 +21,7 @@ export default function Home() {
               <div className="bg-secondary p-1 mr-1 rounded-md text-white">
                 <CalendarCheck className="w-8 h-8 md:w-16 md:h-16 mx-auto" />
               </div>
-              <span>HAS<span>alle</span></span>
+              <span>H.A.S<span className='text-secondary'>ALLE</span></span>
             </h1>
             <h2 className="py-4 md:py-6 text-xl md:text-3xl font-semibold">
               Gérer la reservation  de vos <span className="text-secondary">salles de réunions</span> en toute simplicité
@@ -31,8 +33,16 @@ export default function Home() {
             </ul>
 
             <div className="flex md:flex-row justify-center items-center mt-6">
-              <button className="btn btn-secondary mt-6">Commencer</button>
-              <button className="btn btn-outline btn-secondary mt-6 ml-4">S'inscrire</button>
+              <Link href={"/sign-in"} className="btn btn-sm btn-secondary mt-6">
+                  Se connecter
+              </Link>
+              <Link
+                  href={"/sign-up"}
+                  className="btn mx-4 btn-sm btn-outline btn-secondary mt-6 ml-4"
+              >
+                  Inscrire
+              </Link>
+              
             </div>
           </div> 
         </div>
@@ -57,12 +67,12 @@ export default function Home() {
       </div>
     </div>
 
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <footer className="footer footer-center p-10  text-base-content rounded">
       <h1 className="text-3xl md:text-7xl flex justify-center items-center">
         <div className="bg-secondary p-1 mr-1 rounded-md text-white">
           <CalendarCheck className="w-8 h-8 md:w-16 md:h-16 mx-auto" />
           </div>
-        <span>HAS<span>alle</span></span>
+        <span>H.A.S<span className='text-secondary'>ALLE</span></span>
       </h1>
       <div>
         <p>Copyright © 2025 - Tout droit réservés HAS </p>
